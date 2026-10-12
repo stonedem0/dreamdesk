@@ -1,6 +1,6 @@
 # @dreamdesk/os
 
-The OS layer for [DreamDesk](https://github.com/stonedem0/dreamdesk-ui): what
+The OS layer for [DreamDesk](https://github.com/stonedem0/dreamdesk): what
 makes a desktop of windows behave like an operating system. Files and
 folders, a recycle bin, processes with windows, file types, app state that
 survives a reload, and a DOS prompt.

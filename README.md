@@ -152,10 +152,10 @@ The Web Components build isn't in the npm package; load it from the repo through
 ```html
 <html data-theme="pastelcore">
   <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk-ui@v3.1.0/packages/core/css/globals.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk-ui@v3.1.0/packages/core/css/base.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk-ui@v3.1.0/packages/core/css/pastelcore.css" />
-    <script type="module" src="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk-ui@v3.1.0/packages/core/js/dreamdesk.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk@v3.1.0/packages/core/css/globals.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk@v3.1.0/packages/core/css/base.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk@v3.1.0/packages/core/css/pastelcore.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk@v3.1.0/packages/core/js/dreamdesk.js"></script>
   </head>
   <body>
     <dreamdesk-window title="Hello" width="420" height="260">
