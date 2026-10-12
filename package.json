@@ -1,5 +1,5 @@
 {
-  "name": "dreamdesk-ui",
+  "name": "@dreamdesk/ui",
   "version": "3.1.0",
   "description": "Dreamdesk UI — React component library for retro-style desktop interfaces.",
   "repository": {
@@ -50,5 +50,8 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.13.0",
     "typescript-eslint": "^8.71.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

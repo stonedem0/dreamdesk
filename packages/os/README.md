@@ -6,7 +6,7 @@ folders, a recycle bin, processes with windows, file types, app state that
 survives a reload, and a DOS prompt.
 
 It holds no UI of its own: pair it with
-[`dreamdesk-ui`](https://www.npmjs.com/package/dreamdesk-ui) for the windows,
+[`@dreamdesk/ui`](https://www.npmjs.com/package/@dreamdesk/ui) for the windows,
 or use it with anything. Everything works on its own; `OSProvider` is
 optional.
 

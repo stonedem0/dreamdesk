@@ -50,7 +50,8 @@ packages/os/          — OS platform layer (optional, @dreamdesk/os)
   fs/VirtualFS        in-memory filesystem (read/write/watch/serialize)
   fs/FSAdapter        pluggable persistence interface + LocalStorageAdapter
   process/ProcessManager  spawn/kill processes, extension→app routing
-  shell/ShellEngine   command interpreter (ls/cd/cat/mkdir/rm/mv/ps/kill…)
+  fs/RecycleBin       deleted files go to C:\RECYCLED, restorable
+  shell/ShellEngine   a DOS prompt (DIR/CD/TYPE/COPY/DEL…)
   hooks/OSProvider    React context wiring FS + PM + app registry
 ```
 
@@ -62,8 +63,25 @@ packages/os/          — OS platform layer (optional, @dreamdesk/os)
 
 ## React — quick start
 
+```bash
+npm install @dreamdesk/ui
+```
+
+React 18 or later is a peer dependency. Load the CSS once (the globals, the base styles, a theme, and the components'), then set the theme on `<html>`:
+
 ```tsx
-import { Desktop, Window, Taskbar } from '@dreamdesk/react';
+import '@dreamdesk/ui/css/globals.css';
+import '@dreamdesk/ui/css/base.css';
+import '@dreamdesk/ui/css/pastelcore.css'; // or vista.css, dark.css
+import '@dreamdesk/ui/style.css';
+
+document.documentElement.setAttribute('data-theme', 'pastelcore');
+```
+
+> Formerly `dreamdesk-ui` (up to 3.1.0); same code, new name.
+
+```tsx
+import { Desktop, Window, Taskbar } from '@dreamdesk/ui';
 
 export function App() {
   return (
@@ -129,10 +147,15 @@ wm.restore('notes');
 
 ## Web Components — CDN
 
+The Web Components build isn't in the npm package; load it from the repo through jsDelivr (pin a release tag):
+
 ```html
 <html data-theme="pastelcore">
   <head>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/dreamdesk-ui@2/js/dreamdesk.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk-ui@v3.1.0/packages/core/css/globals.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk-ui@v3.1.0/packages/core/css/base.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk-ui@v3.1.0/packages/core/css/pastelcore.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/gh/stonedem0/dreamdesk-ui@v3.1.0/packages/core/js/dreamdesk.js"></script>
   </head>
   <body>
     <dreamdesk-window title="Hello" width="420" height="260">
@@ -247,14 +270,17 @@ appsFor('txt');                    // all apps registered for .txt
 
 ### Shell engine
 
-```ts
-import { executeCommand, resolvePath, toWinPath } from '@dreamdesk/os';
+A DOS prompt over a `VirtualFS`: `C:\` paths, case-insensitive names, DOS's own messages.
 
-executeCommand('ls /docs', { fs, pm, cwd: '/' });
-// → { lines: ['  <DIR>  archive', '  5 B  readme.txt', ...] }
+```ts
+import { executeCommand, dosPrompt } from '@dreamdesk/os';
+
+const result = executeCommand('dir docs', { fs, cwd: '/' });
+// result.lines: what DIR prints; result.newCwd after CD; result.clear / result.exit
+dosPrompt('/docs'); // "C:\docs>"
 ```
 
-Built-in commands: `ls`, `cd`, `pwd`, `cat`, `touch`, `mkdir`, `rm`, `mv`, `echo`, `ps`, `kill`, `clear`, `help`.
+Commands: `DIR`, `CD`, `TYPE`, `MD`, `RD`, `DEL`, `REN`, `COPY`, `MOVE` (with `*` and `?`), `START`, `ECHO`, `CLS`, `VER`, `DATE`, `TIME`, `HELP`, `EXIT`.
 
 ---
 
