@@ -76,12 +76,16 @@ jobs:
       - name: Sync package versions
         env:
           VER: ${{ steps.ver.outputs.version }}
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
         run: |
           node -e "
             const fs = require('fs'), ver = process.env.VER;
-            ['packages/core/package.json', 'packages/react/package.json'].forEach(p => {
+            ['package.json', 'packages/core/package.json', 'packages/react/package.json'].forEach(p => {
               const pkg = JSON.parse(fs.readFileSync(p, 'utf8'));
               pkg.version = ver;
+              // npm provenance requires repository.url to match the repo the
+              // workflow ran in; older tags don't have it, so set it here
+              pkg.repository = { type: 'git', url: 'git+' + process.env.REPO_URL + '.git' };
               fs.writeFileSync(p, JSON.stringify(pkg, null, 2) + '\n');
               console.log(pkg.name, '->', ver);
             });
