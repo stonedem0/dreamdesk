@@ -2,6 +2,14 @@
   "name": "dreamdesk-ui",
   "version": "3.1.0",
   "description": "Dreamdesk UI — React component library for retro-style desktop interfaces.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stonedem0/dreamdesk-ui.git"
+  },
+  "homepage": "https://github.com/stonedem0/dreamdesk-ui#readme",
+  "bugs": {
+    "url": "https://github.com/stonedem0/dreamdesk-ui/issues"
+  },
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
