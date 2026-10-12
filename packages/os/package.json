@@ -1,21 +1,47 @@
 {
   "name": "@dreamdesk/os",
   "version": "0.1.0",
-  "description": "OS runtime layer for DreamDesk — VirtualFS, ProcessManager, IPC, and system apps.",
+  "description": "The OS layer for DreamDesk: a virtual filesystem with a recycle bin, processes with windows, file types, remembered app state, and a DOS shell.",
+  "keywords": [
+    "dreamdesk",
+    "desktop",
+    "os",
+    "virtual-filesystem",
+    "recycle-bin",
+    "shell",
+    "dos",
+    "react"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stonedem0/dreamdesk-ui.git",
+    "directory": "packages/os"
+  },
+  "homepage": "https://github.com/stonedem0/dreamdesk-ui/tree/master/packages/os#readme",
+  "bugs": {
+    "url": "https://github.com/stonedem0/dreamdesk-ui/issues"
+  },
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc && vite build",
     "test": "vitest run",
@@ -25,10 +51,6 @@
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
-  },
-  "dependencies": {
-    "@dreamdesk/core": "workspace:*",
-    "@dreamdesk/react": "workspace:*"
   },
   "devDependencies": {
     "@testing-library/react": "^16.3.2",
@@ -42,6 +64,5 @@
     "vite": "^5.4.0",
     "vite-plugin-dts": "^4.0.0",
     "vitest": "^2.1.9"
-  },
-  "license": "MIT"
+  }
 }
