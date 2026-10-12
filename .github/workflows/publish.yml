@@ -21,6 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      # npm trusted publishing: GitHub vouches for this workflow, so no npm
+      # token is stored (or expires). Set up on npmjs.com for each package.
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,8 +37,11 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
+          node-version: 22
+
+      # Trusted publishing needs npm 11.5.1 or later
+      - name: Update npm
+        run: npm install -g npm@latest
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -109,8 +115,8 @@ jobs:
       - name: Preview tarball
         run: npm pack --dry-run
 
+      # Authenticated by trusted publishing (no token), with provenance
       - name: Publish dreamdesk-ui
         run: npm publish --access public --tag "$DIST_TAG"
         env:
           DIST_TAG: ${{ steps.ver.outputs.dist_tag }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
