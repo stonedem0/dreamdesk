@@ -124,3 +124,16 @@ jobs:
         run: npm publish --access public --tag "$DIST_TAG"
         env:
           DIST_TAG: ${{ steps.ver.outputs.dist_tag }}
+
+      # @dreamdesk/os has versions of its own: it's published when its version
+      # isn't on npm yet, and skipped otherwise. Also trusted publishing.
+      - name: Publish @dreamdesk/os (when its version is new)
+        working-directory: packages/os
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if npm view "@dreamdesk/os@$VERSION" version > /dev/null 2>&1; then
+            echo "@dreamdesk/os@$VERSION is already on npm: skipped"
+          else
+            pnpm build
+            npm publish --access public
+          fi
