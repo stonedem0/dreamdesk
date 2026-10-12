@@ -120,7 +120,7 @@ jobs:
         run: npm pack --dry-run
 
       # Authenticated by trusted publishing (no token), with provenance
-      - name: Publish dreamdesk-ui
+      - name: Publish @dreamdesk/ui
         run: npm publish --access public --tag "$DIST_TAG"
         env:
           DIST_TAG: ${{ steps.ver.outputs.dist_tag }}

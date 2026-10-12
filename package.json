@@ -1,14 +1,14 @@
 {
-  "name": "dreamdesk-ui",
+  "name": "@dreamdesk/ui",
   "version": "3.1.0",
   "description": "Dreamdesk UI — React component library for retro-style desktop interfaces.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stonedem0/dreamdesk-ui.git"
+    "url": "git+https://github.com/stonedem0/dreamdesk.git"
   },
-  "homepage": "https://github.com/stonedem0/dreamdesk-ui#readme",
+  "homepage": "https://github.com/stonedem0/dreamdesk#readme",
   "bugs": {
-    "url": "https://github.com/stonedem0/dreamdesk-ui/issues"
+    "url": "https://github.com/stonedem0/dreamdesk/issues"
   },
   "type": "module",
   "main": "dist/index.cjs",
@@ -50,5 +50,8 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.13.0",
     "typescript-eslint": "^8.71.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
