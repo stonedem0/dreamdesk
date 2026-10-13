@@ -22,4 +22,16 @@ describe("ListView", () => {
     fireEvent.click(screen.getByText("Date Deleted"));
     expect(screen.getAllByRole("row").slice(1).map((r) => r.textContent)).toEqual([expect.stringContaining("a.txt"), expect.stringContaining("b.txt")]);
   });
+
+  it("shows image icons as images, data: URLs from a bundler too, and anything else as text", () => {
+    const png = "data:image/png;base64,iVBORw0KGgo=";
+    const { container } = render(<ListView items={[
+      { id: "1", name: "one", icon: png },
+      { id: "2", name: "two", icon: "/folder.png" },
+      { id: "3", name: "three", icon: "📁" },
+    ]} />);
+    expect([...container.querySelectorAll("img")].map((i) => i.getAttribute("src"))).toEqual([png, "/folder.png"]);
+    expect(container.textContent).not.toContain("data:image");
+    expect(container.textContent).toContain("📁");
+  });
 });
