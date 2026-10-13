@@ -1,6 +1,7 @@
 import { useState, useCallback, type CSSProperties } from "react";
 import { Icon } from "./Icon";
 import "./ListView.css";
+import { isImageIcon } from "../utils/icon";
 
 export type ListViewMode = "icons" | "details";
 
@@ -41,7 +42,7 @@ export interface ListViewProps {
 
 function ItemIcon({ icon, size }: { icon?: string; size: number }) {
   if (!icon) return null;
-  const isImage = icon.startsWith("/") || icon.startsWith("http") || icon.startsWith("<svg");
+  const isImage = isImageIcon(icon);
   return (
     <span className="dd-listview-icon">
       {isImage ? <Icon src={icon} size={size} /> : <span style={{ fontSize: size * 0.75 }}>{icon}</span>}

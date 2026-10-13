@@ -1,6 +1,7 @@
 import { type ReactNode, type CSSProperties } from "react";
 import { Icon } from "./Icon";
 import "./Toolbar.css";
+import { isImageIcon } from "../utils/icon";
 
 export interface ToolbarButtonProps {
   icon?: string;
@@ -12,7 +13,7 @@ export interface ToolbarButtonProps {
 }
 
 export function ToolbarButton({ icon, label, disabled, active, onClick, className }: ToolbarButtonProps) {
-  const isImage = icon && (icon.startsWith("/") || icon.startsWith("http") || icon.startsWith("<svg"));
+  const isImage = isImageIcon(icon);
   return (
     <button
       className={[

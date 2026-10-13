@@ -7,6 +7,7 @@ import {
 } from "react";
 import { Icon } from "./Icon";
 import "./TreeView.css";
+import { isImageIcon } from "../utils/icon";
 
 export interface TreeNode {
   id: string;
@@ -51,7 +52,7 @@ function NodeRow({ node, depth, isLast, expanded, selected, onToggle, onSelect, 
   const hasChildren = !!node.children?.length;
   const isExpanded = expanded.has(node.id);
   const isSelected = selected === node.id;
-  const isImage = node.icon && (node.icon.startsWith("/") || node.icon.startsWith("http") || node.icon.startsWith("<svg"));
+  const isImage = isImageIcon(node.icon);
 
   return (
     <div
