@@ -1,6 +1,6 @@
 {
   "name": "@dreamdesk/react",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "React + TypeScript components for Dreamdesk UI.",
   "type": "module",
   "main": "dist/index.cjs",
