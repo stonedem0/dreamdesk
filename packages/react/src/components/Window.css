@@ -370,7 +370,7 @@
 .dd-win-body::-webkit-scrollbar-button:vertical:increment:start,
 .dd-win-body::-webkit-scrollbar-button:vertical:decrement:end,
 .terminal-win-body::-webkit-scrollbar-button:vertical:increment:start,
-.terminal-win-body::-webkit-scrollbar-button::-webkit-scrollbar-button:vertical:decrement:end,
+.terminal-win-body::-webkit-scrollbar-button:vertical:decrement:end,
 .dd-win-scroll-content::-webkit-scrollbar-button:vertical:increment:start,
 .dd-win-scroll-content::-webkit-scrollbar-button:vertical:decrement:end,
 .dd-scrollable::-webkit-scrollbar-button:vertical:increment:start,
