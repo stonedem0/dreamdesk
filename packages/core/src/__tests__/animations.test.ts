@@ -8,23 +8,20 @@ function makeWin(): HTMLElement {
   return el;
 }
 
-// happy-dom doesn't implement Web Animations API
+// Animations finish at once, so tests don't wait out real durations. Always,
+// not only when missing: happy-dom 20.14+ has its own, which runs in real time.
 beforeAll(() => {
-  if (!HTMLElement.prototype.animate) {
-    HTMLElement.prototype.animate = function (_keyframes, _opts) {
-      const anim: any = {
-        cancel: vi.fn(),
-        onfinish: null,
-        oncancel: null,
-        getAnimations: () => [],
-      };
-      queueMicrotask(() => anim.onfinish?.());
-      return anim;
+  HTMLElement.prototype.animate = function (_keyframes, _opts) {
+    const anim: any = {
+      cancel: vi.fn(),
+      onfinish: null,
+      oncancel: null,
+      getAnimations: () => [],
     };
-  }
-  if (!HTMLElement.prototype.getAnimations) {
-    HTMLElement.prototype.getAnimations = () => [];
-  }
+    queueMicrotask(() => anim.onfinish?.());
+    return anim;
+  };
+  HTMLElement.prototype.getAnimations = () => [];
 });
 
 describe('open', () => {

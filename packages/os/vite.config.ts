@@ -14,13 +14,13 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@dreamdesk/core": resolve(__dirname, "../core/src/shared.ts"),
-      "@dreamdesk/react": resolve(__dirname, "../react/src/index.ts"),
+      "@dreamdesk/core": resolve(import.meta.dirname, "../core/src/shared.ts"),
+      "@dreamdesk/react": resolve(import.meta.dirname, "../react/src/index.ts"),
     },
   },
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: resolve(import.meta.dirname, "src/index.ts"),
       formats: ["es", "cjs"],
       fileName: (format) => `index.${format === "es" ? "js" : "cjs"}`,
     },
