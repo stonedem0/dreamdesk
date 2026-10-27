@@ -145,6 +145,15 @@ describe("BrowserWindow — status and content", () => {
     const toolbar = document.querySelector(".dd-browser-toolbar")!;
     expect(tabs.compareDocumentPosition(toolbar) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
+
+  it("renders the menuBar slot above the tabs", () => {
+    render(
+      <Desktop style={{ width: "800px", height: "600px" }}>
+        <BrowserWindow title="Browser" defaultOpen menuBar={<div data-testid="menu" />} tabs={<div data-testid="tabs" />}><p>Page</p></BrowserWindow>
+      </Desktop>
+    );
+    expect(screen.getByTestId("menu").compareDocumentPosition(screen.getByTestId("tabs")) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
 });
 
 describe("BrowserErrorPage", () => {
