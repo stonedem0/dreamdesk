@@ -7,6 +7,9 @@
 .dd-startmenu-wrap {
   position: relative;
   flex-shrink: 0;
+  /* A block wrapper around an inline-flex button adds a line box taller than the
+     button, which pushes it up out of line with the taskbar's buttons */
+  display: flex;
 }
 
 /* ── Start button ── */
