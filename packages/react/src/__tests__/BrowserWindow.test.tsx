@@ -134,6 +134,17 @@ describe("BrowserWindow — status and content", () => {
     );
     expect(screen.getByText("Page content")).toBeInTheDocument();
   });
+
+  it("renders the tabs slot above the toolbar", () => {
+    render(
+      <Desktop style={{ width: "800px", height: "600px" }}>
+        <BrowserWindow title="Browser" defaultOpen tabs={<div data-testid="tabs" />}><p>Page</p></BrowserWindow>
+      </Desktop>
+    );
+    const tabs = screen.getByTestId("tabs");
+    const toolbar = document.querySelector(".dd-browser-toolbar")!;
+    expect(tabs.compareDocumentPosition(toolbar) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
 });
 
 describe("BrowserErrorPage", () => {
