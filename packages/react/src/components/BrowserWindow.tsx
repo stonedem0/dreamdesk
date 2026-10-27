@@ -23,6 +23,10 @@ export interface BrowserWindowProps extends Omit<WindowProps, "children" | "scro
   refreshIcon?: string;
   homeIcon?: string;
   historyIcon?: string;
+  /** A MenuBar shown at the top, above the tabs and toolbar */
+  menuBar?: ReactNode;
+  /** A tab strip (or anything else) shown above the toolbar */
+  tabs?: ReactNode;
   children?: ReactNode;
 }
 
@@ -44,6 +48,8 @@ export function BrowserWindow({
   refreshIcon = "↻",
   homeIcon = "⌂",
   historyIcon = "⊞",
+  menuBar,
+  tabs,
   children,
   className,
   ...windowProps
@@ -89,6 +95,9 @@ export function BrowserWindow({
       bodyOverflow="hidden"
     >
       <div className="dd-browser">
+        {menuBar}
+        {tabs}
+
         {/* Toolbar row */}
         <Toolbar className="dd-browser-toolbar">
           <ToolbarButton icon={backIcon}    label="Back"    disabled={!canGoBack}    onClick={onBack} />
