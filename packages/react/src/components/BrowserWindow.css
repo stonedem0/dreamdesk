@@ -51,6 +51,15 @@
   color: #fff;
 }
 
+/* ── Compact toolbar ──
+   The browser's toolbar is smaller than Toolbar's default (Explorer's), as IE's
+   "small icons": 16px icons, narrower buttons, smaller labels. */
+.dd-browser-toolbar .dd-toolbar-btn { min-width: 40px; padding: 1px 3px; }
+.dd-browser-toolbar .dd-toolbar-btn-icon { font-size: 1rem; }
+.dd-browser-toolbar .dd-toolbar-btn-icon .dd-icon { width: 16px; height: 16px; }
+.dd-browser-toolbar .dd-toolbar-btn-label { font-size: 0.62rem; }
+.dd-browser-toolbar .dd-toolbar-sep { height: 26px; }
+
 /* ── Address bar ── */
 .dd-browser-addressbar {
   display: flex;
