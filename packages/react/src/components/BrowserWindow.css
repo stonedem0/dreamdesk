@@ -51,17 +51,15 @@
   color: #fff;
 }
 
-/* ── Compact top part ──
-   The menu bar, toolbar and address bar are one block, so they share a type
-   size and a left edge: menu text 0.75rem like the address label, toolbar
-   labels just under it, 18px icons, narrower buttons. Scoped to the browser
-   so Explorer's toolbar and other menu bars are unchanged. */
-.dd-browser .dd-menubar { font-size: 0.75rem; }
-.dd-browser .dd-menu-trigger { padding: 0.1rem 0.5rem; }
-.dd-browser-toolbar .dd-toolbar-btn { min-width: 42px; padding: 1px 3px; }
+/* ── Compact toolbar ──
+   Smaller than Toolbar's default (Explorer's): 18px icons, narrower buttons.
+   The menu bar is not touched: every window's menu uses the same size, so the
+   rest of this block is sized to fit it. Scoped to the browser, so Explorer's
+   toolbar is unchanged. */
+.dd-browser-toolbar .dd-toolbar-btn { min-width: 44px; padding: 1px 3px; }
 .dd-browser-toolbar .dd-toolbar-btn-icon { font-size: 1.1rem; }
 .dd-browser-toolbar .dd-toolbar-btn-icon .dd-icon { width: 18px; height: 18px; }
-.dd-browser-toolbar .dd-toolbar-btn-label { font-size: 0.7rem; }
+.dd-browser-toolbar .dd-toolbar-btn-label { font-size: 0.75rem; }
 .dd-browser-toolbar .dd-toolbar-sep { height: 28px; }
 
 /* ── Address bar ── */
@@ -76,7 +74,7 @@
 }
 
 .dd-browser-address-label {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   white-space: nowrap;
   padding: 0 4px;
 }
