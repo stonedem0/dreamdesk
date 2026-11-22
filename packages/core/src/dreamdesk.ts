@@ -615,7 +615,7 @@ class DreamDeskButton extends DreamDeskComponent {
   private action: string | null;
 
   static get observedAttributes() {
-    return ['variant', 'action', 'size', 'min-width', 'width', 'height', 'font-size', 'px', 'py', 'disabled'];
+    return ['variant', 'action', 'size', 'min-width', 'width', 'height', 'font-size', 'px', 'py', 'disabled', 'loading'];
   }
 
   static readonly sizeVarMap: Record<string, string> = {
@@ -642,16 +642,18 @@ class DreamDeskButton extends DreamDeskComponent {
     super.connectedCallback();
     this._applyButtonSizeOverrides();
     this._syncDisabled();
+    this._syncLoading();
   }
 
   attributeChangedCallback(name: string, oldVal: string | null, newVal: string | null): void {
     if (oldVal === newVal) return;
     if (name === 'size') return;
     if (name === 'disabled') { this._syncDisabled(); return; }
+    if (name === 'loading') { this._syncLoading(); return; }
     if (name === 'variant') {
       this.variant = newVal ?? 'primary';
       const btn = this.shadowRoot?.querySelector('button');
-      if (btn) btn.className = `btn btn--${this.variant}`;
+      if (btn) { btn.className = `btn btn--${this.variant}`; this._syncDisabled(); this._syncLoading(); }
       return;
     }
     if (name === 'action') {
@@ -672,6 +674,15 @@ class DreamDeskButton extends DreamDeskComponent {
       const val = this.getAttribute(attr);
       if (val != null) this.style.setProperty(cssVar, val);
     });
+  }
+
+  private _syncLoading(): void {
+    const btn = this.shadowRoot?.querySelector<HTMLButtonElement>('button');
+    if (!btn) return;
+    const v = this.getAttribute('loading');
+    const on = v !== null && v !== 'false' && v !== '0';
+    btn.classList.toggle('btn--loading', on);
+    on ? btn.setAttribute('aria-busy', 'true') : btn.removeAttribute('aria-busy');
   }
 
   private _syncDisabled(): void {
