@@ -35,7 +35,7 @@
 
 .dd-toolbar-btn--disabled {
   opacity: 0.4;
-  cursor: default;
+  cursor: var(--dd-cursor-default, default);
 }
 
 .dd-toolbar-btn--active {

@@ -21,7 +21,7 @@
 
 .dd-radio--disabled {
   opacity: 0.5;
-  cursor: default;
+  cursor: var(--dd-cursor-default, default);
 }
 
 /* ── Circle container ── */

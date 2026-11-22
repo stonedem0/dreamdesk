@@ -50,7 +50,7 @@
 
 .dd-cm-item:disabled {
   opacity: 0.45;
-  cursor: default;
+  cursor: var(--dd-cursor-default, default);
 }
 
 .dd-cm-icon {
