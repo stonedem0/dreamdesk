@@ -835,6 +835,7 @@ export default function App() {
               <Toast type="alert" message="This is an alert." />
               <Toast type="notification" message="This is a notification." />
               <Toast type="warning" message="This is a warning." />
+              <Toast type="success" message="Saved successfully." />
             </div>
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
               <Button variant="ghost" size="sm" onClick={() => notify({ message: "File saved successfully", type: "notification" })}>Notify</Button>
@@ -881,6 +882,31 @@ export default function App() {
                 <Button variant="help" size="sm">Help sm</Button>
                 <Button variant="help" size="md">Help md</Button>
                 <Button variant="help" size="lg">Help lg</Button>
+              </div>
+              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+                <Button variant="secondary" size="sm">Secondary sm</Button>
+                <Button variant="secondary" size="md">Secondary md</Button>
+                <Button variant="secondary" size="lg">Secondary lg</Button>
+              </div>
+              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+                <Button variant="danger" size="sm">Danger sm</Button>
+                <Button variant="danger" size="md">Danger md</Button>
+                <Button variant="danger" size="lg">Danger lg</Button>
+              </div>
+              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+                <Button variant="success" size="sm">Success sm</Button>
+                <Button variant="success" size="md">Success md</Button>
+                <Button variant="success" size="lg">Success lg</Button>
+              </div>
+              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+                <Button variant="warning" size="sm">Warning sm</Button>
+                <Button variant="warning" size="md">Warning md</Button>
+                <Button variant="warning" size="lg">Warning lg</Button>
+              </div>
+              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+                <Button variant="info" size="sm">Info sm</Button>
+                <Button variant="info" size="md">Info md</Button>
+                <Button variant="info" size="lg">Info lg</Button>
               </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
                 <Button variant="primary" size="sm" disabled>Disabled sm</Button>

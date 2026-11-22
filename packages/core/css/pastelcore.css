@@ -19,6 +19,16 @@ html[data-theme="pastelcore"] {
   --pastelcore-blue: #a1e4ff;
   --pastelcore-purple: #c0b6fa;
   --pc-rose-pompadour: #fb6f92ff;
+
+  /* "Original" palette roles (design board): one colour per role */
+  --pc-original-page: #fff4f8;
+  --pc-original-primary: #aee0f8;
+  --pc-original-secondary: #fdf3e7;
+  --pc-original-danger: #f2a5ab;
+  --pc-original-success: #c6efcf;
+  --pc-original-warning: #fde3a6;
+  --pc-original-info: #b9f7f7;
+  --pc-original-muted: #e3e8ef;
   
   --app-color: #fff5fa; /* Rose Mist */
   --line-color: rgb(61, 45, 51);
@@ -66,10 +76,17 @@ html[data-theme="pastelcore"] {
   --color-error: var(--pastelcore-red);
   --color-success: var(--pastel-jade);
   --color-warning: var(--pastel-yellow);
+  --color-danger: var(--pc-original-danger);
+  --color-info: var(--pc-original-info);
+  --color-muted: var(--pc-original-muted);
   
   /* UI Component Colors */
   --color-button-primary: var(--pastelcore-blue);
-  --color-button-secondary: var(--pastelcore-red);
+  --color-button-secondary: var(--pc-original-secondary);
+  --color-button-danger: var(--pc-original-danger);
+  --color-button-success: var(--pc-original-success);
+  --color-button-warning: var(--pc-original-warning);
+  --color-button-info: var(--pc-original-info);
   --color-button-ghost: var(--pastelcore-red);
   --color-button-help: var(--pastel-yellow);
   --color-button-disable: var(--pastel-orange);
@@ -87,6 +104,7 @@ html[data-theme="pastelcore"] {
   --color-toast-alert: var(--pastelcore-red-bg);
   --color-toast-notification: var(--pastelcore-cyan);
   --color-toast-warning: var(--pastel-yellow);
+  --color-toast-success: var(--pc-original-success);
   
   --color-progress-track: var(--pastel-grey);
   --color-progress-bar: var(--pastelcore-cyan);
@@ -155,11 +173,17 @@ html[data-theme="pastelcore"] {
   --button-shadow-primary: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #a4bfc3;
   --button-shadow-ghost: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #db989f;
   --button-shadow-help: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #f3d6a0;
+  --button-shadow-secondary: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #e6d6c2;
+  --button-shadow-danger: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #db989f;
+  --button-shadow-success: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #a4cdae;
+  --button-shadow-warning: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #e0c488;
+  --button-shadow-info: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #9ed5d5;
 
   /* toast shadows by type (tight) */
   --toast-alert-shadow: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #db989f;
   --toast-notification-shadow: inset -2px 2px 1px #f9f7ff, inset 2px -2px 1px var(--pasteclore-cyan-shadow);
   --toast-warning-shadow: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #bebbb1;
+  --toast-success-shadow: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #a4cdae;
   --progress-segment-shadow: inset -1px 1px 1px #fffcfc, inset 1px -1px 1px #b198a2;
 
   /* switch shadows */
