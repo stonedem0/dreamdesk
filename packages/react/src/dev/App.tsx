@@ -869,44 +869,44 @@ export default function App() {
             <Slider label="Brightness:" defaultValue={80} showValue />
             <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="primary" size="sm">Primary sm</Button>
-                <Button variant="primary" size="md">Primary md</Button>
-                <Button variant="primary" size="lg">Primary lg</Button>
+                <Button variant="primary" size="sm">Primary</Button>
+                <Button variant="primary" size="md">Primary</Button>
+                <Button variant="primary" size="lg">Primary</Button>
               </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="ghost" size="sm">Ghost sm</Button>
-                <Button variant="ghost" size="md">Ghost md</Button>
-                <Button variant="ghost" size="lg">Ghost lg</Button>
+                <Button variant="ghost" size="sm">Ghost</Button>
+                <Button variant="ghost" size="md">Ghost</Button>
+                <Button variant="ghost" size="lg">Ghost</Button>
               </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="help" size="sm">Help sm</Button>
-                <Button variant="help" size="md">Help md</Button>
-                <Button variant="help" size="lg">Help lg</Button>
+                <Button variant="help" size="sm">Help</Button>
+                <Button variant="help" size="md">Help</Button>
+                <Button variant="help" size="lg">Help</Button>
               </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="secondary" size="sm">Secondary sm</Button>
-                <Button variant="secondary" size="md">Secondary md</Button>
-                <Button variant="secondary" size="lg">Secondary lg</Button>
+                <Button variant="secondary" size="sm">Secondary</Button>
+                <Button variant="secondary" size="md">Secondary</Button>
+                <Button variant="secondary" size="lg">Secondary</Button>
               </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="danger" size="sm">Danger sm</Button>
-                <Button variant="danger" size="md">Danger md</Button>
-                <Button variant="danger" size="lg">Danger lg</Button>
+                <Button variant="danger" size="sm">Danger</Button>
+                <Button variant="danger" size="md">Danger</Button>
+                <Button variant="danger" size="lg">Danger</Button>
               </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="success" size="sm">Success sm</Button>
-                <Button variant="success" size="md">Success md</Button>
-                <Button variant="success" size="lg">Success lg</Button>
+                <Button variant="success" size="sm">Success</Button>
+                <Button variant="success" size="md">Success</Button>
+                <Button variant="success" size="lg">Success</Button>
               </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="warning" size="sm">Warning sm</Button>
-                <Button variant="warning" size="md">Warning md</Button>
-                <Button variant="warning" size="lg">Warning lg</Button>
+                <Button variant="warning" size="sm">Warning</Button>
+                <Button variant="warning" size="md">Warning</Button>
+                <Button variant="warning" size="lg">Warning</Button>
               </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="info" size="sm">Info sm</Button>
-                <Button variant="info" size="md">Info md</Button>
-                <Button variant="info" size="lg">Info lg</Button>
+                <Button variant="info" size="sm">Info</Button>
+                <Button variant="info" size="md">Info</Button>
+                <Button variant="info" size="lg">Info</Button>
               </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center", flexWrap: "wrap" }}>
                 <Button variant="primary" size="md">Default</Button>
@@ -917,9 +917,9 @@ export default function App() {
                 <Button variant="primary" size="md" disabled>Disabled</Button>
               </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="primary" size="sm" disabled>Disabled sm</Button>
-                <Button variant="primary" size="md" disabled>Disabled md</Button>
-                <Button variant="primary" size="lg" disabled>Disabled lg</Button>
+                <Button variant="primary" size="sm" disabled>Disabled</Button>
+                <Button variant="primary" size="md" disabled>Disabled</Button>
+                <Button variant="primary" size="lg" disabled>Disabled</Button>
               </div>
             </div>
           </div>
