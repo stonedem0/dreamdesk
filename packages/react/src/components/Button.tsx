@@ -4,6 +4,7 @@ export interface ButtonProps {
   variant?: "primary" | "ghost" | "help" | "basic" | "iridescent" | "secondary" | "danger" | "success" | "warning" | "info";
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
+  loading?: boolean;
   action?: string;
   minWidth?: string;
   width?: string;
@@ -21,6 +22,7 @@ export function Button({
   variant = "primary",
   size,
   disabled = false,
+  loading = false,
   action,
   minWidth,
   width,
@@ -47,6 +49,7 @@ export function Button({
     "btn",
     `btn--${variant}`,
     disabled ? "btn--disable" : "",
+    loading ? "btn--loading" : "",
     size ? `btn--size-${size}` : "",
     className,
   ].filter(Boolean).join(" ");
@@ -57,10 +60,11 @@ export function Button({
       style={cssVars}
       disabled={disabled}
       aria-disabled={disabled ? "true" : undefined}
+      aria-busy={loading ? "true" : undefined}
       tabIndex={disabled ? -1 : undefined}
       data-action={action}
       aria-label={action}
-      onClick={disabled ? undefined : onClick}
+      onClick={disabled || loading ? undefined : onClick}
     >
       {children}
     </button>

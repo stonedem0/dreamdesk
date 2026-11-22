@@ -908,6 +908,14 @@ export default function App() {
                 <Button variant="info" size="md">Info md</Button>
                 <Button variant="info" size="lg">Info lg</Button>
               </div>
+              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center", flexWrap: "wrap" }}>
+                <Button variant="primary" size="md">Default</Button>
+                <Button variant="primary" size="md" className="is-hover">Hover</Button>
+                <Button variant="primary" size="md" className="is-pressed">Pressed</Button>
+                <Button variant="primary" size="md" className="is-focus">Focus</Button>
+                <Button variant="primary" size="md" loading>Saving…</Button>
+                <Button variant="primary" size="md" disabled>Disabled</Button>
+              </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
                 <Button variant="primary" size="sm" disabled>Disabled sm</Button>
                 <Button variant="primary" size="md" disabled>Disabled md</Button>
