@@ -868,58 +868,24 @@ export default function App() {
             <Slider label="Volume:" defaultValue={60} showValue />
             <Slider label="Brightness:" defaultValue={80} showValue />
             <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="primary" size="sm">Primary sm</Button>
-                <Button variant="primary" size="md">Primary md</Button>
-                <Button variant="primary" size="lg">Primary lg</Button>
-              </div>
-              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="ghost" size="sm">Ghost sm</Button>
-                <Button variant="ghost" size="md">Ghost md</Button>
-                <Button variant="ghost" size="lg">Ghost lg</Button>
-              </div>
-              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="help" size="sm">Help sm</Button>
-                <Button variant="help" size="md">Help md</Button>
-                <Button variant="help" size="lg">Help lg</Button>
-              </div>
-              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="secondary" size="sm">Secondary sm</Button>
-                <Button variant="secondary" size="md">Secondary md</Button>
-                <Button variant="secondary" size="lg">Secondary lg</Button>
-              </div>
-              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="danger" size="sm">Danger sm</Button>
-                <Button variant="danger" size="md">Danger md</Button>
-                <Button variant="danger" size="lg">Danger lg</Button>
-              </div>
-              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="success" size="sm">Success sm</Button>
-                <Button variant="success" size="md">Success md</Button>
-                <Button variant="success" size="lg">Success lg</Button>
-              </div>
-              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="warning" size="sm">Warning sm</Button>
-                <Button variant="warning" size="md">Warning md</Button>
-                <Button variant="warning" size="lg">Warning lg</Button>
-              </div>
-              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="info" size="sm">Info sm</Button>
-                <Button variant="info" size="md">Info md</Button>
-                <Button variant="info" size="lg">Info lg</Button>
+              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center", flexWrap: "wrap" }}>
+                <Button variant="primary">Primary</Button>
+                <Button variant="ghost">Ghost</Button>
+                <Button variant="help">Help</Button>
+                <Button variant="secondary">Secondary</Button>
+                <Button variant="danger">Danger</Button>
+                <Button variant="success">Success</Button>
+                <Button variant="warning">Warning</Button>
+                <Button variant="info">Info</Button>
+                <Button variant="primary" disabled>Disabled</Button>
               </div>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center", flexWrap: "wrap" }}>
-                <Button variant="primary" size="md">Default</Button>
-                <Button variant="primary" size="md" className="is-hover">Hover</Button>
-                <Button variant="primary" size="md" className="is-pressed">Pressed</Button>
-                <Button variant="primary" size="md" className="is-focus">Focus</Button>
-                <Button variant="primary" size="md" loading>Saving…</Button>
-                <Button variant="primary" size="md" disabled>Disabled</Button>
-              </div>
-              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
-                <Button variant="primary" size="sm" disabled>Disabled sm</Button>
-                <Button variant="primary" size="md" disabled>Disabled md</Button>
-                <Button variant="primary" size="lg" disabled>Disabled lg</Button>
+                <Button variant="primary">Default</Button>
+                <Button variant="primary" className="is-hover">Hover</Button>
+                <Button variant="primary" className="is-pressed">Pressed</Button>
+                <Button variant="primary" className="is-focus">Focus</Button>
+                <Button variant="primary" loading>Saving…</Button>
+                <Button variant="primary" disabled>Disabled</Button>
               </div>
             </div>
           </div>
