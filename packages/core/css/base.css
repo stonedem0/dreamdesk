@@ -338,8 +338,8 @@ body {
 
 .btn--size-lg {
   min-width: 7rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.375rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 1.125rem;
 }
 
 .btn--disable {
