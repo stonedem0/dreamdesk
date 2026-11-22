@@ -189,7 +189,8 @@ body {
     transform 0.1s ease,
     background-color 0.2s ease;
   box-sizing: border-box;
-  line-height: 1;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
 }
 
 /* remove legacy background-image icons; inline SVGs are used now */
@@ -325,20 +326,20 @@ body {
 
 .btn--size-sm {
   min-width: 3rem;
-  padding: 0.05rem 0.4rem;
+  padding: 0.5em 1.1em;
   font-size: 0.75rem;
 }
 
 .btn--size-md {
   min-width: 5rem;
-  padding: 0.125rem 0.75rem;
-  font-size: 0.85rem;
+  padding: 0.5em 1.1em;
+  font-size: 0.9375rem;
 }
 
 .btn--size-lg {
   min-width: 7rem;
-  padding: 0.25rem 1rem;
-  font-size: 1rem;
+  padding: 0.5em 1.1em;
+  font-size: 1.1875rem;
 }
 
 .btn--disable {
