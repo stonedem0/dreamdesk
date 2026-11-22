@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 
 export interface ToastProps {
-  type?: "alert" | "notification" | "warning";
+  type?: "alert" | "notification" | "warning" | "success";
   message?: ReactNode;
   onClose?: () => void;
 }

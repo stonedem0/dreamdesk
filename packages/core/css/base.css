@@ -231,6 +231,36 @@ body {
   border: var(--dd-btn-border, var(--color-window-border, var(--border)));
 }
 
+.btn--secondary {
+  color: var(--color-text, var(--black));
+  background: var(--color-button-secondary, #fdf3e7);
+  border: var(--dd-btn-border, var(--color-window-border, var(--border)));
+}
+
+.btn--danger {
+  color: var(--color-text, var(--black));
+  background: var(--color-button-danger, #f2a5ab);
+  border: var(--dd-btn-border, var(--color-window-border, var(--border)));
+}
+
+.btn--success {
+  color: var(--color-text, var(--black));
+  background: var(--color-button-success, #c6efcf);
+  border: var(--dd-btn-border, var(--color-window-border, var(--border)));
+}
+
+.btn--warning {
+  color: var(--color-text, var(--black));
+  background: var(--color-button-warning, #fde3a6);
+  border: var(--dd-btn-border, var(--color-window-border, var(--border)));
+}
+
+.btn--info {
+  color: var(--color-text, var(--black));
+  background: var(--color-button-info, #b9f7f7);
+  border: var(--dd-btn-border, var(--color-window-border, var(--border)));
+}
+
 /* Iridescent: the theme's --dd-iridescent surface (a thin-film shimmer in
    Pastelcore). Themes without it get a primary-looking button. */
 .btn--iridescent {
@@ -573,6 +603,9 @@ dreamdesk-tab-panel.active {
 .toast-warning {
   background: var(--color-toast-warning, #fff4c2);
 }
+.toast-success {
+  background: var(--color-toast-success, #d6f5dd);
+}
 .toast-btn--close {
   appearance: none;
   background: none;
@@ -592,7 +625,8 @@ dreamdesk-tab-panel.active {
 /* Alerts shadow emphasis */
 .toast-alert,
 .toast-notification,
-.toast-warning {
+.toast-warning,
+.toast-success {
   box-shadow: var(--toast-shadow, var(--shadow, none));
 }
 
@@ -916,6 +950,37 @@ dreamdesk-tab-panel.active {
   );
 }
 
+.btn--secondary {
+  box-shadow: var(
+    --button-shadow-secondary,
+    var(--button-shadow, inset -2px 2px 1px #ffffff, inset 2px -2px 1px #cbbcc4)
+  );
+}
+.btn--danger {
+  box-shadow: var(
+    --button-shadow-danger,
+    var(--button-shadow, inset -2px 2px 1px #ffffff, inset 2px -2px 1px #cbbcc4)
+  );
+}
+.btn--success {
+  box-shadow: var(
+    --button-shadow-success,
+    var(--button-shadow, inset -2px 2px 1px #ffffff, inset 2px -2px 1px #cbbcc4)
+  );
+}
+.btn--warning {
+  box-shadow: var(
+    --button-shadow-warning,
+    var(--button-shadow, inset -2px 2px 1px #ffffff, inset 2px -2px 1px #cbbcc4)
+  );
+}
+.btn--info {
+  box-shadow: var(
+    --button-shadow-info,
+    var(--button-shadow, inset -2px 2px 1px #ffffff, inset 2px -2px 1px #cbbcc4)
+  );
+}
+
 /* per-type toast depth */
 .toast-alert {
   box-shadow: var(
@@ -932,6 +997,12 @@ dreamdesk-tab-panel.active {
 .toast-warning {
   box-shadow: var(
     --toast-warning-shadow,
+    var(--toast-shadow, var(--shadow, none))
+  );
+}
+.toast-success {
+  box-shadow: var(
+    --toast-success-shadow,
     var(--toast-shadow, var(--shadow, none))
   );
 }
