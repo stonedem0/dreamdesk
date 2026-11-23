@@ -127,9 +127,9 @@ html[data-theme="pastelcore"] {
   
   /* Scroll styles */
   --scroll-track-bg: #fffefe;
-  --scroll-thumb-bg: var(--pastelcore-cyan);
+  --scroll-thumb-bg: var(--pc-original-secondary);
   --scroll-thumb-shadow-light: #ffffff;
-  --scroll-thumb-shadow-dark: var(--pasteclore-cyan-shadow);
+  --scroll-thumb-shadow-dark: #d9c4cc;
   --scroll-button-bg: #ccc;
   --scroll-button-shadow-light: #ffffff;
   --scroll-button-shadow-dark: #a2a2a2;
@@ -429,10 +429,10 @@ html[data-theme="pastelcore"] *::-webkit-scrollbar {
 
 .pc-scroll::-webkit-scrollbar-thumb,
 html[data-theme="pastelcore"] *::-webkit-scrollbar-thumb {
-  background: var(--pastelcore-cyan);
+  background: var(--scroll-thumb-bg);
   background-size: 300% 300%;
-  box-shadow: inset -2px 2px 1px #ffffff,
-    inset 2px -2px 1px var(--pasteclore-cyan-shadow);
+  box-shadow: inset -2px 2px 1px var(--scroll-thumb-shadow-light, #ffffff),
+    inset 2px -2px 1px var(--scroll-thumb-shadow-dark);
 }
 
 .pc-scroll::-webkit-scrollbar-thumb:hover,
