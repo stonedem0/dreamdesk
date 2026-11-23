@@ -119,6 +119,8 @@
 .dd-listview-item--selected:hover {
   background: var(--dd-list-selected-bg, var(--color-active, #000080)) !important;
   color: var(--dd-list-selected-fg, #fff);
+  outline: var(--dd-selected-outline, none);
+  outline-offset: -1px;
 }
 
 } /* @layer dreamdesk */

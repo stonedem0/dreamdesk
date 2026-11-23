@@ -72,6 +72,10 @@ html[data-theme="pastelcore"] {
   --color-hover: var(--pastelcore-blue);
   --color-active: var(--pastelcore-cyan);
   --dd-list-selected-fg: #000;
+  /* Selection: soft cyan with a dotted outline */
+  --dd-tree-selected-bg: #c6f3f1;
+  --dd-list-selected-bg: #c6f3f1;
+  --dd-selected-outline: 1px dotted #1a1a1a;
   --color-disabled: var(--pastel-orange);
   --color-error: var(--pastelcore-red);
   --color-success: var(--pastel-jade);
