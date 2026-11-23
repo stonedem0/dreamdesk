@@ -23,7 +23,7 @@ html[data-theme="pastelcore"] {
   /* "Original" palette roles (design board): one colour per role */
   --pc-original-page: #fff4f8;
   --pc-original-primary: #aee0f8;
-  --pc-original-secondary: #fdf3e7;
+  --pc-original-secondary: #f8e2e4;
   --pc-original-danger: #f2a5ab;
   --pc-original-success: #c6efcf;
   --pc-original-warning: #fde3a6;
@@ -176,7 +176,7 @@ html[data-theme="pastelcore"] {
   --button-shadow-primary: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #a4bfc3;
   --button-shadow-ghost: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #db989f;
   --button-shadow-help: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #f3d6a0;
-  --button-shadow-secondary: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #e6d6c2;
+  --button-shadow-secondary: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #d9c4cc;
   --button-shadow-danger: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #db989f;
   --button-shadow-success: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #a4cdae;
   --button-shadow-warning: inset -2px 2px 1px #ffffff, inset 2px -2px 1px #e0c488;

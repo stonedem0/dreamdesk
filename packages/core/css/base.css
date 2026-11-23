@@ -235,7 +235,7 @@ body {
 
 .btn--secondary {
   color: var(--color-text, var(--black));
-  background: var(--color-button-secondary, #fdf3e7);
+  background: var(--color-button-secondary, #f8e2e4);
   border: var(--dd-btn-border, var(--color-window-border, var(--border)));
 }
 
