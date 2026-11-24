@@ -68,7 +68,9 @@
   text-shadow: var(--dd-header-text-shadow, none);
   box-shadow: var(--dd-header-shadow, var(--window-header-shadow, none));
   letter-spacing: 0.08em;
-  width: var(--dd-header-height, 1.5rem);
+  /* as thick as a window header: its height plus the padding above and below it */
+  box-sizing: content-box;
+  width: calc(var(--dd-header-height, 1.5rem) + 0.4rem);
   flex-shrink: 0;
   /* the panel already draws the outer border, so the bar only needs a divider on its inner edge */
   border-right: var(--dd-header-border-bottom, var(--color-window-border, var(--border, 1px solid #000)));
