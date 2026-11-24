@@ -22,6 +22,7 @@ body {
   background: var(--color-background, var(--app-color, #fff5fa));
   font-family: var(--font-ui);
   font-size: var(--font-size-base);
+  cursor: var(--dd-cursor-default, auto);
   overflow-x: hidden;
 }
 
@@ -234,7 +235,7 @@ body {
 
 .btn--secondary {
   color: var(--color-text, var(--black));
-  background: var(--color-button-secondary, #fdf3e7);
+  background: var(--color-button-secondary, #f8e2e4);
   border: var(--dd-btn-border, var(--color-window-border, var(--border)));
 }
 

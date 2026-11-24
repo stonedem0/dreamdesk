@@ -61,7 +61,7 @@
   backdrop-filter: var(--dd-header-backdrop-filter, var(--header-backdrop-filter, none));
 }
 
-.dd-win-header--no-move { cursor: default; }
+.dd-win-header--no-move { cursor: var(--dd-cursor-default, default); }
 
 .dd-win-title-group {
   display: flex;
