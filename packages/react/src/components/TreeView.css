@@ -13,7 +13,7 @@
 .dd-tree-node {
   display: flex;
   align-items: center;
-  height: 20px;
+  height: var(--dd-row-h, 1.25rem);
   cursor: pointer;
   white-space: nowrap;
   outline: none;
@@ -26,14 +26,14 @@
 }
 
 .dd-tree-node--selected {
-  background: var(--dd-tree-selected-bg, var(--color-active, #000080));
+  background: var(--dd-tree-selected-bg, var(--dd-highlight-bg, var(--color-active, #000080)));
   color: var(--dd-tree-selected-fg, #000);
-  outline: var(--dd-selected-outline, none);
+  outline: var(--dd-highlight-outline, none);
   outline-offset: -1px;
 }
 
 .dd-tree-node--selected:hover {
-  background: var(--dd-tree-selected-bg, var(--color-active, #000080));
+  background: var(--dd-tree-selected-bg, var(--dd-highlight-bg, var(--color-active, #000080)));
 }
 
 /* ── Indent guides (vertical lines for ancestor depths) ── */

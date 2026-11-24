@@ -73,6 +73,7 @@
   align-items: center;
   gap: 0.4rem;
   width: 100%;
+  min-height: var(--dd-row-h, 1.25rem);
   padding: var(--dd-menu-item-py, 0.1rem) var(--dd-menu-item-px, 0.6rem) var(--dd-menu-item-py, 0.1rem) 1.25rem;
   background: none;
   border: none;
@@ -87,8 +88,9 @@
 
 .dd-menu-item:hover:not(:disabled),
 .dd-menu-item:focus-visible:not(:disabled) {
-  background: var(--dd-cm-item-hover-bg, var(--color-window-header, #c0e0ff));
-  outline: none;
+  background: var(--dd-cm-item-hover-bg, var(--dd-highlight-bg, var(--color-window-header, #c0e0ff)));
+  outline: var(--dd-highlight-outline, none);
+  outline-offset: -1px;
 }
 
 .dd-menu-item:disabled {
