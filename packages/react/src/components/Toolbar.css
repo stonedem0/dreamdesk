@@ -50,7 +50,7 @@
 }
 
 .dd-toolbar-btn-label {
-  font-size: 0.68rem;
+  font-size: var(--dd-font-xs, 0.75rem);
   white-space: nowrap;
   color: var(--color-text, #000);
 }

@@ -601,10 +601,10 @@ body {
 /* Tab Styles */
 dreamdesk-tab {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
+  padding: var(--dd-space-2, 0.25rem) var(--dd-space-4, 0.75rem);
   cursor: pointer;
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: var(--dd-font-md, 0.9375rem);
   border-bottom: 2px solid transparent;
   margin-right: 4px;
 }

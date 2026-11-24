@@ -11,7 +11,7 @@
   border: var(--color-window-border, var(--border));
   background: var(--color-input-background, #fff);
   color: var(--color-text, var(--black));
-  font-size: 0.75rem;
+  font-size: var(--dd-font-xs, 0.75rem);
   line-height: 1.5;
 }
 
