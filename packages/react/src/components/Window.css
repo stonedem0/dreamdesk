@@ -213,6 +213,10 @@
 }
 
 .terminal-win-body {
+  /* The scrollbar borders are black, which vanish against the dark terminal:
+     inside it they use a mid grey that shows on both the black text area and the light buttons. */
+  --border: 0.09rem solid var(--color-terminal-edge, #8f858b);
+  --color-window-border: var(--border);
   flex: 1;
   background-color: var(--color-terminal-bg, #000);
   color: var(--color-terminal-fg, #fafafa);
