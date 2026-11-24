@@ -492,6 +492,14 @@ html[data-theme="pastelcore"] *::-webkit-scrollbar-thumb:vertical {
   border-right: none;
 }
 
+/* where the two scrollbars meet: closes the lines that stop at its edges */
+.pc-scroll::-webkit-scrollbar-corner,
+html[data-theme="pastelcore"] *::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+  border-top: var(--border);
+  border-left: var(--border);
+}
+
 .pc-scroll::-webkit-scrollbar-button:horizontal,
 html[data-theme="pastelcore"] *::-webkit-scrollbar-button:horizontal {
   border-top: var(--border);
@@ -500,14 +508,14 @@ html[data-theme="pastelcore"] *::-webkit-scrollbar-button:horizontal {
 
 .pc-scroll::-webkit-scrollbar-button:horizontal:decrement,
 html[data-theme="pastelcore"] *::-webkit-scrollbar-button:horizontal:decrement {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><path fill="%231C1C1C" d="M16 12l-6-6v12z"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><path fill="%231C1C1C" d="M8 12l6 6V6z"/></svg>');
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .pc-scroll::-webkit-scrollbar-button:horizontal:increment,
 html[data-theme="pastelcore"] *::-webkit-scrollbar-button:horizontal:increment {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><path fill="%231C1C1C" d="M8 12l6 6V6z"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><path fill="%231C1C1C" d="M16 12l-6-6v12z"/></svg>');
   background-position: center;
   background-repeat: no-repeat;
 }

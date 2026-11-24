@@ -298,6 +298,15 @@
   border-right: none;
 }
 
+/* A horizontal scrollbar needs its track to close on the right too, or the
+   right-hand arrow button has no divider */
+.dd-win-body::-webkit-scrollbar-track:horizontal,
+.terminal-win-body::-webkit-scrollbar-track:horizontal,
+.dd-win-scroll-content::-webkit-scrollbar-track:horizontal,
+.dd-scrollable::-webkit-scrollbar-track:horizontal {
+  border-right: var(--color-window-border, var(--border));
+}
+
 .dd-win-body::-webkit-scrollbar-thumb,
 .terminal-win-body::-webkit-scrollbar-thumb,
 .dd-win-scroll-content::-webkit-scrollbar-thumb,
