@@ -57,23 +57,31 @@
   flex-direction: row;
 }
 
-/* ── Vertical brand bar ── */
+/* ── Vertical brand bar: the same chrome as a window header (colour, bevel,
+   thickness, type), turned on its side ── */
 .dd-startmenu-brand {
-  background: var(--dd-startmenu-brand-bg, var(--color-taskbar-bg, var(--color-active, #000080)));
-  color: var(--dd-startmenu-brand-fg, #000);
+  background: var(--dd-startmenu-brand-bg, var(--dd-header-bg, var(--color-window-header, var(--color-active, #000080))));
+  color: var(--dd-startmenu-brand-fg, var(--dd-header-color, var(--color-text, #000)));
   font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: bold;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  font-size: var(--dd-header-font-size, 0.95rem);
+  font-weight: var(--dd-header-font-weight, bold);
+  text-shadow: var(--dd-header-text-shadow, none);
+  box-shadow: var(--dd-header-shadow, var(--window-header-shadow, none));
   letter-spacing: 0.08em;
-  width: 1.6rem;
+  width: var(--dd-header-height, 1.5rem);
   flex-shrink: 0;
   border-left: 1px solid #000;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   padding-bottom: 0.5rem;
+}
+
+/* Only the text is turned, so the bevel above keeps its light direction */
+.dd-startmenu-brand-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
 
 /* ── App list ── */
