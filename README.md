@@ -71,6 +71,7 @@ React 18 or later is a peer dependency. Load the CSS once (the globals, the base
 
 ```tsx
 import '@dreamdesk/ui/css/globals.css';
+import '@dreamdesk/ui/css/tokens.css';
 import '@dreamdesk/ui/css/base.css';
 import '@dreamdesk/ui/css/pastelcore.css'; // or vista.css, dark.css
 import '@dreamdesk/ui/style.css';

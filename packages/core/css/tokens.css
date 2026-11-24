@@ -1,0 +1,28 @@
+/* Sizing tokens: one text scale, a few spacing steps, and a shared menu group.
+   Components read these with a literal fallback, so a missing import never
+   breaks them. Inside the `dreamdesk` cascade layer so themes and apps can
+   override any of it. */
+@layer dreamdesk {
+
+:root {
+  /* Text scale (about 1.25x per step above sm) */
+  --dd-font-xs: 0.75rem;
+  --dd-font-sm: 0.8rem;     /* menus, lists */
+  --dd-font-md: 0.9375rem;  /* buttons, body */
+  --dd-font-lg: 1.1875rem;
+
+  /* Spacing steps */
+  --dd-space-1: 0.1rem;
+  --dd-space-2: 0.25rem;
+  --dd-space-3: 0.5rem;
+  --dd-space-4: 0.75rem;
+
+  /* Menus: MenuBar, ContextMenu, StartMenu */
+  --dd-menu-font: var(--dd-font-sm);
+  --dd-menu-shortcut-font: var(--dd-font-xs);
+  --dd-menu-item-py: var(--dd-space-1);
+  --dd-menu-item-px: 0.6rem;
+  --dd-menu-min-w: 7.5rem;
+}
+
+} /* @layer dreamdesk */

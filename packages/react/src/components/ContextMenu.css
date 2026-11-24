@@ -8,7 +8,7 @@
   left: var(--dd-cm-x);
   top: var(--dd-cm-y);
   z-index: 11000;
-  min-width: 7.5rem;
+  min-width: var(--dd-menu-min-w, 7.5rem);
   background: var(--dd-cm-bg, var(--color-window-body, #fff));
   border: var(--dd-cm-border, var(--color-window-border, var(--border)));
   box-shadow: var(--dd-cm-shadow, 2px 2px 0 rgba(0,0,0,0.18));
@@ -31,12 +31,12 @@
   align-items: center;
   gap: 0.4rem;
   width: 100%;
-  padding: 0.1rem 0.6rem 0.1rem 0.5rem;
+  padding: var(--dd-menu-item-py, 0.1rem) var(--dd-menu-item-px, 0.6rem) var(--dd-menu-item-py, 0.1rem) 0.5rem;
   background: none;
   border: none;
   cursor: pointer;
   font: inherit;
-  font-size: 0.8rem;
+  font-size: var(--dd-menu-font, 0.8rem);
   color: var(--dd-cm-fg, var(--color-text, inherit));
   text-align: left;
   box-sizing: border-box;
@@ -68,7 +68,7 @@
 
 .dd-cm-shortcut {
   margin-left: 1.25rem;
-  font-size: 0.75rem;
+  font-size: var(--dd-menu-shortcut-font, 0.75rem);
   opacity: 0.6;
 }
 
