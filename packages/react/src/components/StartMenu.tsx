@@ -62,7 +62,7 @@ export function StartMenu({ label = "DreamDesk", items, onSelect, buttonLabel = 
                     close();
                   }}
                 >
-                  {item.icon && <Icon src={item.icon} size={24} className="dd-startmenu-icon" />}
+                  {item.icon && <Icon src={item.icon} size={20} className="dd-startmenu-icon" />}
                   <span>{item.label}</span>
                 </li>
               )

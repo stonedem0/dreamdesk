@@ -17,6 +17,14 @@
   --dd-space-3: 0.5rem;
   --dd-space-4: 0.75rem;
 
+  /* One row height for tree rows, menu items and the Start menu */
+  --dd-row-h: 1.25rem;
+  /* The Start menu is a launcher, so its rows are taller on purpose */
+  --dd-startmenu-row-h: 1.75rem;
+
+  /* Highlight (hover/selected): themes may set --dd-highlight-bg, --dd-highlight-fg
+     and --dd-highlight-outline. Unset, each component keeps its own colours. */
+
   /* Menus: MenuBar, ContextMenu, StartMenu */
   --dd-menu-font: var(--dd-font-sm);
   --dd-menu-shortcut-font: var(--dd-font-xs);
