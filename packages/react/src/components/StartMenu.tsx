@@ -47,7 +47,7 @@ export function StartMenu({ label = "DreamDesk", items, onSelect, buttonLabel = 
     <div ref={wrapRef} className={["dd-startmenu-wrap", className].filter(Boolean).join(" ")}>
       {open && (
         <div className="dd-startmenu">
-          <div className="dd-startmenu-brand">{label}</div>
+          <div className="dd-startmenu-brand"><span className="dd-startmenu-brand-text">{label}</span></div>
           <ul className="dd-startmenu-list">
             {items.map((item) =>
               item.divider ? (
