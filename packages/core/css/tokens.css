@@ -30,6 +30,7 @@
   --dd-menu-shortcut-font: var(--dd-font-xs);
   --dd-menu-item-py: var(--dd-space-1);
   --dd-menu-item-px: 0.6rem;
+  --dd-menu-item-pl: 0.5rem;   /* left edge; checkable items get extra room */
   --dd-menu-min-w: 7.5rem;
 }
 

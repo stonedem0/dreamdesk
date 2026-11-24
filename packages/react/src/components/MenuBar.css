@@ -29,10 +29,11 @@
 
 .dd-menu-trigger:hover,
 .dd-menu-trigger[aria-expanded="true"] {
-  background: var(--dd-menu-trigger-active-bg, var(--color-window-header, #c0d8f0));
+  background: var(--dd-menu-trigger-active-bg, var(--dd-highlight-bg, var(--color-window-header, #c0d8f0)));
   border-color: transparent;
   font-weight: bold;
-  outline: none;
+  outline: var(--dd-highlight-outline, none);
+  outline-offset: -1px;
 }
 
 /* Underline first letter as access key hint */
@@ -74,7 +75,7 @@
   gap: 0.4rem;
   width: 100%;
   min-height: var(--dd-row-h, 1.25rem);
-  padding: var(--dd-menu-item-py, 0.1rem) var(--dd-menu-item-px, 0.6rem) var(--dd-menu-item-py, 0.1rem) 1.25rem;
+  padding: var(--dd-menu-item-py, 0.1rem) var(--dd-menu-item-px, 0.6rem) var(--dd-menu-item-py, 0.1rem) var(--dd-menu-item-pl, 0.5rem);
   background: none;
   border: none;
   cursor: pointer;
@@ -96,6 +97,10 @@
 .dd-menu-item:disabled {
   opacity: 0.45;
   cursor: default;
+}
+
+.dd-menu-item--checkable {
+  padding-left: 1.25rem; /* room for the check mark */
 }
 
 .dd-menu-item-check {
