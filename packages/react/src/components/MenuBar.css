@@ -29,10 +29,11 @@
 
 .dd-menu-trigger:hover,
 .dd-menu-trigger[aria-expanded="true"] {
-  background: var(--dd-menu-trigger-active-bg, var(--color-window-header, #c0d8f0));
+  background: var(--dd-menu-trigger-active-bg, var(--dd-highlight-bg, var(--color-window-header, #c0d8f0)));
   border-color: transparent;
   font-weight: bold;
-  outline: none;
+  outline: var(--dd-highlight-outline, none);
+  outline-offset: -1px;
 }
 
 /* Underline first letter as access key hint */
