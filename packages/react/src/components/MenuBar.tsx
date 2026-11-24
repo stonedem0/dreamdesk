@@ -53,7 +53,7 @@ export function MenuItem({ children, shortcut, checked, disabled, onClick }: Men
 
   return (
     <button
-      className="dd-menu-item"
+      className={checked !== undefined ? "dd-menu-item dd-menu-item--checkable" : "dd-menu-item"}
       disabled={disabled}
       onClick={handleClick}
       onKeyDown={handleKey}
