@@ -70,7 +70,8 @@
   letter-spacing: 0.08em;
   width: var(--dd-header-height, 1.5rem);
   flex-shrink: 0;
-  border-left: 1px solid #000;
+  /* the panel already draws the outer border, so the bar only needs a divider on its inner edge */
+  border-right: var(--dd-header-border-bottom, var(--color-window-border, var(--border, 1px solid #000)));
   display: flex;
   flex-direction: column;
   align-items: center;
