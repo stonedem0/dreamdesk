@@ -15,7 +15,7 @@
 
 .dd-checkbox--disabled {
   opacity: 0.5;
-  cursor: var(--dd-cursor-default, default);
+  cursor: default;
 }
 
 /* ── The visual box ── */

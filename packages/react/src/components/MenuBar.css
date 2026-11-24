@@ -93,7 +93,7 @@
 
 .dd-menu-item:disabled {
   opacity: 0.45;
-  cursor: var(--dd-cursor-default, default);
+  cursor: default;
 }
 
 .dd-menu-item-check {
