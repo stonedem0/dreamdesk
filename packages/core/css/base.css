@@ -327,19 +327,19 @@ body {
 .btn--size-sm {
   min-width: 3rem;
   padding: 0.5em 1.1em;
-  font-size: 0.75rem;
+  font-size: var(--dd-font-xs, 0.75rem);
 }
 
 .btn--size-md {
   min-width: 5rem;
   padding: 0.5em 1.1em;
-  font-size: 0.9375rem;
+  font-size: var(--dd-font-md, 0.9375rem);
 }
 
 .btn--size-lg {
   min-width: 7rem;
   padding: 0.5em 1.1em;
-  font-size: 1.1875rem;
+  font-size: var(--dd-font-lg, 1.1875rem);
 }
 
 .btn--disable {

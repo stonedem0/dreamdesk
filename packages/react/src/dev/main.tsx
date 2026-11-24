@@ -1,4 +1,5 @@
 import "../../../core/css/globals.css";
+import "../../../core/css/tokens.css";
 import "../../../core/css/base.css";
 import "../../../core/css/pastelcore.css";
 import "../../../core/css/dark.css";
