@@ -867,16 +867,6 @@ export default function App() {
             />
             <Slider label="Volume:" defaultValue={60} showValue />
             <Slider label="Brightness:" defaultValue={80} showValue />
-            <div
-              style={{
-                border: "var(--border)",
-                padding: "0.75rem",
-                textAlign: "center",
-                cursor: "var(--dd-cursor-default, default)",
-              }}
-            >
-              Cursor: move the mouse over this box (Pastelcore has its own)
-            </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
               <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
                 <Button variant="primary" size="sm">Primary</Button>
