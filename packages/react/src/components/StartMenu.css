@@ -90,7 +90,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  min-height: var(--dd-row-h, 1.25rem);
+  min-height: var(--dd-startmenu-row-h, 1.75rem);
   padding: 0 12px;
   font-family: inherit;
   font-size: var(--dd-menu-font, 0.8rem);
