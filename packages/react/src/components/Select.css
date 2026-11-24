@@ -63,7 +63,7 @@
 }
 
 .dd-select:disabled {
-  cursor: var(--dd-cursor-default, default);
+  cursor: default;
   background: var(--color-surface, #d4d0c8);
 }
 

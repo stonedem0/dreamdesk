@@ -38,7 +38,7 @@
 }
 
 .dd-slider-container--disabled .dd-slider {
-  cursor: var(--dd-cursor-default, default);
+  cursor: default;
 }
 
 /* Track */
