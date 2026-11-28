@@ -28,8 +28,8 @@ body {
 /* Windows styles */
 .win {
   border: var(
-    --dd-border,
-    var(--dd-window-border, var(--color-window-border, var(--border)))
+    --dd-edge,
+    var(--dd-border, var(--dd-window-border, var(--color-window-border, var(--border))))
   );
   background-color: var(--dd-window-body, var(--color-window-body, #ffffff));
   color: var(--dd-window-text, var(--color-text, var(--black)));
@@ -625,7 +625,7 @@ dreamdesk-tab-panel.active {
 /* Toast styles */
 .toast {
   padding: 0.6rem;
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   width: 22rem;
   height: 2.2rem;
   box-shadow: var(--toast-shadow, var(--shadow, none));
@@ -688,7 +688,7 @@ dreamdesk-tab-panel.active {
   left: 0;
   right: 0;
   bottom: 0;
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -712,7 +712,7 @@ dreamdesk-tab-panel.active {
   width: 1.8rem;
   height: 1.8rem;
   z-index: 1;
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   background: var(--toggle-knob-gradient, var(--color-toggle-knob, #fff));
   box-shadow: var(--toggle-knob-shadow, none);
 }
@@ -770,7 +770,7 @@ dreamdesk-tab-panel.active {
   height: 1.4rem;
   width: 66%;
   border-radius: 0px;
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   background: var(--color-input-background, #fff);
   color: var(--color-text, var(--black));
   box-shadow: var(--input-shadow, none);
@@ -782,7 +782,7 @@ dreamdesk-tab-panel.active {
   transition:
     width 0.5s ease,
     filter 0.5s linear;
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   border-left: none;
   text-align: end;
   font-weight: bold;
@@ -798,7 +798,7 @@ dreamdesk-tab-panel.active {
   inline-size: 100%;
   height: var(--dd-pb-h, 1.5rem);
   background: var(--color-progress-track, #e0e0e0);
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -814,7 +814,7 @@ dreamdesk-tab-panel.active {
     background 0.3s ease,
     filter 0.3s ease;
   height: 100%;
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   opacity: 0.2;
   flex-shrink: 0;
   box-sizing: border-box;
@@ -849,7 +849,7 @@ dreamdesk-tab-panel.active {
   overflow-y: auto;
   padding: var(--dd-scrollable-py, 0.2rem) var(--dd-scrollable-px, 0.2rem);
   max-height: var(--scrollable-max-height, 16rem);
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   border-right: none;
   scrollbar-gutter: stable;
   background: var(--dd-content-bg, var(--color-input-background, #fff));
@@ -859,7 +859,7 @@ dreamdesk-tab-panel.active {
   overflow-y: auto;
   padding: var(--dd-scrollable-py, 0.2rem) var(--dd-scrollable-px, 0.2rem);
   max-height: var(--scrollable-max-height, 16rem);
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   border-right: none;
   scrollbar-gutter: stable;
   background: var(--dd-content-bg, var(--color-input-background, #fff));
@@ -877,11 +877,11 @@ dreamdesk-tab-panel.active {
   width: var(--win-width-lg, auto);
 }
 .win-content.scrollable:not(.overflowing) {
-  border-right: var(--color-window-border, var(--border));
+  border-right: var(--dd-edge, var(--color-window-border, var(--border)));
 }
 /* Attribute variant border-right when not overflowing */
 .win-content[scrollable]:not(.overflowing) {
-  border-right: var(--color-window-border, var(--border));
+  border-right: var(--dd-edge, var(--color-window-border, var(--border)));
 }
 
 /* Attribute-based API for window content scrollability */
@@ -891,7 +891,7 @@ dreamdesk-tab-panel.active {
   padding: var(--dd-scrollable-py, 0.2rem) var(--dd-scrollable-px, 0.2rem);
   height: var(--dd-scrollable-h, 100%);
   max-height: var(--scrollable-max-height, none);
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   border-right: none;
   scrollbar-gutter: stable;
   background: var(--dd-content-bg, var(--color-input-background, #fff));
@@ -902,7 +902,7 @@ dreamdesk-tab-panel.active {
   overflow-y: auto;
   padding: var(--dd-scrollable-py, 0.2rem) var(--dd-scrollable-px, 0.2rem);
   max-height: var(--scrollable-max-height, 16rem);
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   border-right: none;
   scrollbar-gutter: stable;
   background: var(--dd-content-bg, var(--color-input-background, #fff));
@@ -1141,7 +1141,7 @@ dreamdesk-tab-panel.active {
   padding: 0 4px;
   gap: 4px;
   background: var(--color-taskbar-bg, var(--color-surface, #d4d0c8));
-  border-top: var(--dd-border, 2px solid #000);
+  border-top: var(--dd-edge, var(--dd-border, 2px solid #000));
   box-sizing: border-box;
   z-index: 9999;
   font-family: inherit;
@@ -1165,7 +1165,7 @@ dreamdesk-tab-panel.active {
   max-width: 160px;
   padding: 0 8px;
   background: var(--color-taskbar-btn-bg, var(--color-surface, #d4d0c8));
-  border: var(--dd-border, 2px solid #000);
+  border: var(--dd-edge, var(--dd-border, 2px solid #000));
   cursor: pointer;
   font-family: inherit;
   font-size: 0.8rem;
@@ -1200,7 +1200,7 @@ dreamdesk-tab-panel.active {
   height: calc(var(--dd-taskbar-h, 36px) - 8px);
   display: flex;
   align-items: center;
-  border: var(--dd-border, 2px solid #000);
+  border: var(--dd-edge, var(--dd-border, 2px solid #000));
   font-size: 0.8rem;
   background: var(--color-taskbar-btn-bg, var(--color-surface, #d4d0c8));
   box-sizing: border-box;

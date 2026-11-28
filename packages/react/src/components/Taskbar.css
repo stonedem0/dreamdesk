@@ -14,7 +14,7 @@
   padding: 0 4px;
   gap: 4px;
   background: var(--color-taskbar-bg, var(--color-surface, #d4d0c8));
-  border-top: 1px solid #000;
+  border-top: var(--dd-edge, 1px solid #000);
   box-sizing: border-box;
   z-index: 9999;
   font-family: inherit;
@@ -38,7 +38,7 @@
   max-width: 160px;
   padding: 0 8px;
   background: var(--color-taskbar-btn-bg, var(--color-surface, #d4d0c8));
-  border: 1px solid #000;
+  border: var(--dd-edge, 1px solid #000);
   cursor: pointer;
   box-shadow: var(--window-controls-button-shadow, none);
   font-family: inherit;
@@ -83,7 +83,7 @@
   height: calc(var(--dd-taskbar-h, 36px) - 8px);
   display: flex;
   align-items: center;
-  border: 1px solid #000;
+  border: var(--dd-edge, 1px solid #000);
   font-size: 0.8rem;
   background: var(--color-taskbar-btn-bg, var(--color-surface, #d4d0c8));
   box-sizing: border-box;
