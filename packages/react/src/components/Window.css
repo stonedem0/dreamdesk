@@ -203,7 +203,8 @@
 }
 
 .terminal-window .dd-win-body {
-  padding: 0;
+  /* a little frame around the screen, like the old MS-DOS Prompt */
+  padding: var(--dd-terminal-frame, 4px);
 }
 
 .dd-notepad-window .dd-win-body {
@@ -213,10 +214,10 @@
 }
 
 .terminal-win-body {
-  /* The scrollbar borders are black, which vanish against the dark terminal:
-     inside it they use a mid grey that shows on both the black text area and the light buttons. */
-  --border: 0.09rem solid var(--color-terminal-edge, #8f858b);
-  --color-window-border: var(--border);
+  /* The edge is the shared one (black, all round), like .dd-scrollable. Dividers
+     between scrollbar parts are black too, which vanish on the dark screen, so
+     inside the terminal they are a mid grey. */
+  --dd-edge-divider: 0.09rem solid var(--color-terminal-edge, #8f858b);
   flex: 1;
   background-color: var(--color-terminal-bg, #000);
   color: var(--color-terminal-fg, #fafafa);
@@ -225,6 +226,7 @@
   overflow: auto;
   height: 100%;
   box-sizing: border-box;
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
 }
 
 /* ── Fill scrollable — wraps window body children, stretches to fill ── */
@@ -244,7 +246,7 @@
   overflow-y: auto;
   width: var(--dd-scrollable-w, 100%);
   max-height: var(--dd-scrollable-max-h, 16rem);
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   background: var(--dd-scrollable-bg, var(--color-input-background, var(--app-color, #fff5fa)));
   scrollbar-gutter: stable;
   box-sizing: border-box;
@@ -281,9 +283,9 @@
   min-height: 0;
 }
 
-.dd-scrollable::-webkit-scrollbar-track { border-right: var(--color-window-border, var(--border)); }
-.dd-scrollable::-webkit-scrollbar-thumb { border-right: var(--color-window-border, var(--border)); }
-.dd-scrollable::-webkit-scrollbar-button { border-right: var(--color-window-border, var(--border)); }
+.dd-scrollable::-webkit-scrollbar-track { border-right: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border)))); }
+.dd-scrollable::-webkit-scrollbar-thumb { border-right: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border)))); }
+.dd-scrollable::-webkit-scrollbar-button { border-right: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border)))); }
 
 /* ── Custom scrollbar for window body and .dd-scrollable ── */
 .dd-win-body::-webkit-scrollbar,
@@ -298,7 +300,7 @@
 .dd-win-scroll-content::-webkit-scrollbar-track,
 .dd-scrollable::-webkit-scrollbar-track {
   background: var(--scroll-track-bg, #f1f1f1);
-  border-left: var(--color-window-border, var(--border));
+  border-left: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
   border-right: none;
 }
 
@@ -308,7 +310,7 @@
 .terminal-win-body::-webkit-scrollbar-track:horizontal,
 .dd-win-scroll-content::-webkit-scrollbar-track:horizontal,
 .dd-scrollable::-webkit-scrollbar-track:horizontal {
-  border-right: var(--color-window-border, var(--border));
+  border-right: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
 }
 
 .dd-win-body::-webkit-scrollbar-thumb,
@@ -332,7 +334,7 @@
 .terminal-win-body::-webkit-scrollbar-thumb:horizontal,
 .dd-win-scroll-content::-webkit-scrollbar-thumb:horizontal,
 .dd-scrollable::-webkit-scrollbar-thumb:horizontal {
-  border-right: var(--color-window-border, var(--border));
+  border-right: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
 }
 
 .dd-win-body::-webkit-scrollbar-thumb:hover,
@@ -366,10 +368,19 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  border-left: var(--color-window-border, var(--border));
+  border-left: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
   border-right: none;
   box-shadow: inset -2px 2px 1px var(--scroll-button-shadow-light, #ffffff),
               inset 2px -2px 1px var(--scroll-button-shadow-dark, #a2a2a2);
+}
+
+/* A child only draws a divider against a sibling, never on the container's own
+   edge: the left arrow sits on that edge, so it has no left line. */
+.dd-win-body::-webkit-scrollbar-button:horizontal:decrement,
+.terminal-win-body::-webkit-scrollbar-button:horizontal:decrement,
+.dd-win-scroll-content::-webkit-scrollbar-button:horizontal:decrement,
+.dd-scrollable::-webkit-scrollbar-button:horizontal:decrement {
+  border-left: none;
 }
 
 .dd-win-body::-webkit-scrollbar-button:vertical:decrement,
