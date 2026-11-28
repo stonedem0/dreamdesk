@@ -226,14 +226,15 @@
   overflow: auto;
   height: 100%;
   box-sizing: border-box;
-  /* A sunken edge so the black screen doesn't just melt into the window:
-     dark on the top and left, light on the bottom and right. */
-  border: var(--dd-terminal-edge-w, 2px) solid;
+  /* One line all round, the same as .dd-scrollable (the Browser's content).
+     For the old sunken look, set --dd-terminal-bevel-dark to a grey,
+     --dd-terminal-bevel-light to white and --dd-terminal-edge-w to 2px. */
+  border: var(--dd-terminal-edge-w, 0.09rem) solid;
   border-color:
-    var(--dd-terminal-bevel-dark, var(--line-color, #404040))
-    var(--dd-terminal-bevel-light, #fff)
-    var(--dd-terminal-bevel-light, #fff)
-    var(--dd-terminal-bevel-dark, var(--line-color, #404040));
+    var(--dd-terminal-bevel-dark, var(--black, #1c1c1c))
+    var(--dd-terminal-bevel-light, var(--black, #1c1c1c))
+    var(--dd-terminal-bevel-light, var(--black, #1c1c1c))
+    var(--dd-terminal-bevel-dark, var(--black, #1c1c1c));
 }
 
 /* ── Fill scrollable — wraps window body children, stretches to fill ── */
