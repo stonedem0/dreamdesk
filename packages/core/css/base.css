@@ -566,19 +566,19 @@ body {
 /* Scrollbars */
 ::-webkit-scrollbar-track {
   background: var(--scroll-track-bg, #fffefe);
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
 }
 ::-webkit-scrollbar-thumb {
   background: var(--scroll-thumb-bg, #fffefe);
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
   background-size: 300% 300%;
 }
 ::-webkit-scrollbar-button {
   display: block;
   height: 1rem;
   width: 1rem;
-  border-right: var(--color-window-border, var(--border));
-  border-left: var(--color-window-border, var(--border));
+  border-right: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
+  border-left: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
   background-size: contain;
   background-repeat: no-repeat;
 }

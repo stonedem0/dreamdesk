@@ -214,10 +214,10 @@
 }
 
 .terminal-win-body {
-  /* The scrollbar borders are black, which vanish against the dark terminal:
-     inside it they use a mid grey that shows on both the black text area and the light buttons. */
-  --border: 0.09rem solid var(--color-terminal-edge, #8f858b);
-  --color-window-border: var(--border);
+  /* The edge is the shared one (black, all round), like .dd-scrollable. Dividers
+     between scrollbar parts are black too, which vanish on the dark screen, so
+     inside the terminal they are a mid grey. */
+  --dd-edge-divider: 0.09rem solid var(--color-terminal-edge, #8f858b);
   flex: 1;
   background-color: var(--color-terminal-bg, #000);
   color: var(--color-terminal-fg, #fafafa);
@@ -226,15 +226,7 @@
   overflow: auto;
   height: 100%;
   box-sizing: border-box;
-  /* One line all round, the same as .dd-scrollable (the Browser's content).
-     For the old sunken look, set --dd-terminal-bevel-dark to a grey,
-     --dd-terminal-bevel-light to white and --dd-terminal-edge-w to 2px. */
-  border: var(--dd-terminal-edge-w, 0.09rem) solid;
-  border-color:
-    var(--dd-terminal-bevel-dark, var(--black, #1c1c1c))
-    var(--dd-terminal-bevel-light, var(--black, #1c1c1c))
-    var(--dd-terminal-bevel-light, var(--black, #1c1c1c))
-    var(--dd-terminal-bevel-dark, var(--black, #1c1c1c));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
 }
 
 /* ── Fill scrollable — wraps window body children, stretches to fill ── */
@@ -254,7 +246,7 @@
   overflow-y: auto;
   width: var(--dd-scrollable-w, 100%);
   max-height: var(--dd-scrollable-max-h, 16rem);
-  border: var(--color-window-border, var(--border));
+  border: var(--dd-edge, var(--color-window-border, var(--border)));
   background: var(--dd-scrollable-bg, var(--color-input-background, var(--app-color, #fff5fa)));
   scrollbar-gutter: stable;
   box-sizing: border-box;
@@ -291,9 +283,9 @@
   min-height: 0;
 }
 
-.dd-scrollable::-webkit-scrollbar-track { border-right: var(--color-window-border, var(--border)); }
-.dd-scrollable::-webkit-scrollbar-thumb { border-right: var(--color-window-border, var(--border)); }
-.dd-scrollable::-webkit-scrollbar-button { border-right: var(--color-window-border, var(--border)); }
+.dd-scrollable::-webkit-scrollbar-track { border-right: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border)))); }
+.dd-scrollable::-webkit-scrollbar-thumb { border-right: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border)))); }
+.dd-scrollable::-webkit-scrollbar-button { border-right: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border)))); }
 
 /* ── Custom scrollbar for window body and .dd-scrollable ── */
 .dd-win-body::-webkit-scrollbar,
@@ -308,7 +300,7 @@
 .dd-win-scroll-content::-webkit-scrollbar-track,
 .dd-scrollable::-webkit-scrollbar-track {
   background: var(--scroll-track-bg, #f1f1f1);
-  border-left: var(--color-window-border, var(--border));
+  border-left: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
   border-right: none;
 }
 
@@ -318,7 +310,7 @@
 .terminal-win-body::-webkit-scrollbar-track:horizontal,
 .dd-win-scroll-content::-webkit-scrollbar-track:horizontal,
 .dd-scrollable::-webkit-scrollbar-track:horizontal {
-  border-right: var(--color-window-border, var(--border));
+  border-right: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
 }
 
 .dd-win-body::-webkit-scrollbar-thumb,
@@ -342,7 +334,7 @@
 .terminal-win-body::-webkit-scrollbar-thumb:horizontal,
 .dd-win-scroll-content::-webkit-scrollbar-thumb:horizontal,
 .dd-scrollable::-webkit-scrollbar-thumb:horizontal {
-  border-right: var(--color-window-border, var(--border));
+  border-right: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
 }
 
 .dd-win-body::-webkit-scrollbar-thumb:hover,
@@ -376,7 +368,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  border-left: var(--color-window-border, var(--border));
+  border-left: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
   border-right: none;
   box-shadow: inset -2px 2px 1px var(--scroll-button-shadow-light, #ffffff),
               inset 2px -2px 1px var(--scroll-button-shadow-dark, #a2a2a2);
