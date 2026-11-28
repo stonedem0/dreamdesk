@@ -21,7 +21,7 @@
 }
 
 .dd-win {
-  border: var(--dd-border, var(--dd-window-border, var(--color-window-border, var(--border))));
+  border: var(--dd-edge, var(--dd-border, var(--dd-window-border, var(--color-window-border, var(--border)))));
   background-color: var(--dd-window-body, var(--color-window-body, #ffffff));
   color: var(--dd-window-text, var(--color-text, var(--black)));
   box-shadow: var(--dd-window-shadow, var(--window-shadow, none));

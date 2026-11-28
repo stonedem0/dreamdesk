@@ -20,7 +20,7 @@
   font-size: 0.85rem;
   font-weight: bold;
   cursor: pointer;
-  border: 1px solid #000;
+  border: var(--dd-edge, 1px solid #000);
   background: var(--dd-startbtn-bg, var(--color-taskbar-bg, var(--color-active, #000080)));
   box-sizing: border-box;
   white-space: nowrap;
@@ -50,7 +50,7 @@
   left: 0;
   width: 16rem;
   background: var(--color-surface, #d4d0c8);
-  border: 1px solid #000;
+  border: var(--dd-edge, 1px solid #000);
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
   z-index: 10000;
   display: flex;
@@ -73,7 +73,7 @@
   width: calc(var(--dd-header-height, 1.5rem) + 0.4rem);
   flex-shrink: 0;
   /* the panel already draws the outer border, so the bar only needs a divider on its inner edge */
-  border-right: var(--dd-header-border-bottom, var(--color-window-border, var(--border, 1px solid #000)));
+  border-right: var(--dd-edge-divider, var(--dd-header-border-bottom, var(--color-window-border, var(--border, 1px solid #000))));
   display: flex;
   flex-direction: column;
   align-items: center;

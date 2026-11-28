@@ -50,15 +50,29 @@ mid grey (`--color-terminal-edge`).
 
 ## Where it applies today
 
-`.dd-scrollable`, the window scrollbars (`.dd-win-body`, `.terminal-win-body`,
-`.dd-win-scroll-content`), the Pastelcore and base scrollbar rules, the Terminal
-screen, the Explorer's pane divider (drawn by the list pane, the later sibling),
-the status bar's section dividers, and the Browser's address box and its
-dropdown divider.
+Every container outline and divider reads the tokens: windows, `.dd-scrollable`
+and the web-component scroll areas, all scrollbars, inputs, toasts, progress
+bars, the toggle, tags, the context menu and menu bar dropdowns, the Explorer's
+pane divider, the status bar, the Browser's address box, the taskbar, and the
+Start menu (panel, button and side-title divider). Set `--dd-edge` once and all
+of them follow; the Terminal's dividers are the one deliberate override.
 
-Not migrated yet (they still hand-remove touching edges with `border-right: none`
-and similar): the list view's header gridlines, the tab strip, the toolbar,
-dialogs and the Start menu. The tree's dotted guide lines are not edges and stay.
+Each fallback chain still ends in what it used before, so a theme or app that
+sets `--dd-border`, `--color-window-border` or a component token keeps working.
+
+## What deliberately has its own token
+
+These are not container edges or sibling dividers, so they stay out of the pattern:
+
+| What | Why | Token |
+|---|---|---|
+| Buttons | control chrome, themed per variant | `--dd-btn-border` |
+| Window controls | the minimise / maximise / close boxes | `--dd-controls-border` |
+| The title bar's bottom line | tied to the header, not the body | `--dd-header-border-bottom` |
+| Slider, radio, checkbox, select | their 1px light/dark pairs are bevels (rule 3) | `--dd-*-shadow`, `--dd-*-highlight` |
+| List view header gridlines | table cell separators, lighter on purpose | `--dd-border-color` |
+| Tree guide lines | dotted guides, not edges | `--dd-tree-line-color` |
+| Tooltips | their own small popup | `--dd-tooltip-border` |
 
 ## Adding a new window
 

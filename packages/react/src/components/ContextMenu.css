@@ -10,7 +10,7 @@
   z-index: 11000;
   min-width: var(--dd-menu-min-w, 7.5rem);
   background: var(--dd-cm-bg, var(--color-window-body, #fff));
-  border: var(--dd-cm-border, var(--color-window-border, var(--border)));
+  border: var(--dd-cm-border, var(--dd-edge, var(--color-window-border, var(--border))));
   box-shadow: var(--dd-cm-shadow, 2px 2px 0 rgba(0,0,0,0.18));
   padding: 0.1rem 0;
   box-sizing: border-box;
