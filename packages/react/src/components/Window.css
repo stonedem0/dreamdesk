@@ -203,7 +203,8 @@
 }
 
 .terminal-window .dd-win-body {
-  padding: 0;
+  /* a little frame around the screen, like the old MS-DOS Prompt */
+  padding: var(--dd-terminal-frame, 4px);
 }
 
 .dd-notepad-window .dd-win-body {
@@ -225,6 +226,14 @@
   overflow: auto;
   height: 100%;
   box-sizing: border-box;
+  /* A sunken edge so the black screen doesn't just melt into the window:
+     dark on the top and left, light on the bottom and right. */
+  border: 2px solid;
+  border-color:
+    var(--dd-terminal-bevel-dark, var(--line-color, #404040))
+    var(--dd-terminal-bevel-light, #fff)
+    var(--dd-terminal-bevel-light, #fff)
+    var(--dd-terminal-bevel-dark, var(--line-color, #404040));
 }
 
 /* ── Fill scrollable — wraps window body children, stretches to fill ── */
