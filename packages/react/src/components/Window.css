@@ -228,7 +228,7 @@
   box-sizing: border-box;
   /* A sunken edge so the black screen doesn't just melt into the window:
      dark on the top and left, light on the bottom and right. */
-  border: 2px solid;
+  border: var(--dd-terminal-edge-w, 2px) solid;
   border-color:
     var(--dd-terminal-bevel-dark, var(--line-color, #404040))
     var(--dd-terminal-bevel-light, #fff)
@@ -379,6 +379,15 @@
   border-right: none;
   box-shadow: inset -2px 2px 1px var(--scroll-button-shadow-light, #ffffff),
               inset 2px -2px 1px var(--scroll-button-shadow-dark, #a2a2a2);
+}
+
+/* A child only draws a divider against a sibling, never on the container's own
+   edge: the left arrow sits on that edge, so it has no left line. */
+.dd-win-body::-webkit-scrollbar-button:horizontal:decrement,
+.terminal-win-body::-webkit-scrollbar-button:horizontal:decrement,
+.dd-win-scroll-content::-webkit-scrollbar-button:horizontal:decrement,
+.dd-scrollable::-webkit-scrollbar-button:horizontal:decrement {
+  border-left: none;
 }
 
 .dd-win-body::-webkit-scrollbar-button:vertical:decrement,
