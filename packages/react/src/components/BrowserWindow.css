@@ -25,7 +25,7 @@
   max-height: 200px;
   overflow-y: auto;
   background: var(--color-surface, #d4d0c8);
-  border: var(--color-window-border, 1px solid #000);
+  border: var(--dd-edge, var(--color-window-border, 1px solid #000));
   z-index: 9999;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -82,7 +82,7 @@
 .dd-browser-address-input-wrap {
   display: flex;
   flex: 1;
-  border: var(--dd-border, 1px solid #000);
+  border: var(--dd-edge, var(--dd-border, 1px solid #000));
   background: #fff;
 }
 
@@ -99,7 +99,7 @@
 
 .dd-browser-address-dropdown {
   border: none;
-  border-left: var(--dd-border, 1px solid #000);
+  border-left: var(--dd-edge-divider, var(--dd-edge, var(--dd-border, 1px solid #000)));
   background: var(--color-surface, #d4d0c8);
   padding: 0 4px;
   cursor: pointer;

@@ -25,7 +25,7 @@
 }
 
 .dd-statusbar-section + .dd-statusbar-section {
-  border-left: var(--dd-border, 1px solid #000);
+  border-left: var(--dd-edge-divider, var(--dd-edge, var(--dd-border, 1px solid #000)));
   padding-left: 8px;
   margin-left: 4px;
 }

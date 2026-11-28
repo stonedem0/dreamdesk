@@ -55,14 +55,14 @@ export function ExplorerWindow({
         <ToolbarButton icon={DETAILS_SVG} label="Details" active={mode === "details"} onClick={() => setMode("details")} />
       </Toolbar>
       <div style={{ display: "flex", flex: 1, minHeight: 0, overflow: "hidden" }}>
-        <div style={{ width: "180px", flexShrink: 0, borderRight: "var(--dd-border, var(--border, 1px solid #000))", overflow: "auto" }}>
+        <div style={{ width: "180px", flexShrink: 0, overflow: "auto" }}>
           <TreeView
             nodes={nodes}
             selected={treeSelected}
             onSelect={handleNodeSelect}
           />
         </div>
-        <div style={{ flex: 1, minWidth: 0, overflow: "auto" }}>
+        <div className="dd-edge-divider-x" style={{ flex: 1, minWidth: 0, overflow: "auto" }}>
           <ListView
             items={items}
             mode={mode}

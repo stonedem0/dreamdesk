@@ -39,20 +39,20 @@
    --dd-edge          the line a container draws round itself (once)
    --dd-edge-divider  the line between two siblings inside it; defaults to
                       --dd-edge, but a dark surface can set a lighter one
-   Neither is set here: each use falls back to --color-window-border, then
-   --border, so a theme or an app can set either to change every line at once. */
+   Neither is set here: each use falls back to --dd-border (the older, general
+   override), then --color-window-border, then --border, so a theme or an app can set either to change every line at once. */
 
 .dd-edge {
-  border: var(--dd-edge, var(--color-window-border, var(--border)));
+  border: var(--dd-edge, var(--dd-border, var(--color-window-border, var(--border))));
 }
 
 /* A divider is drawn by the later sibling, on its leading edge only */
 .dd-edge-divider-x {
-  border-left: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
+  border-left: var(--dd-edge-divider, var(--dd-edge, var(--dd-border, var(--color-window-border, var(--border)))));
 }
 
 .dd-edge-divider-y {
-  border-top: var(--dd-edge-divider, var(--dd-edge, var(--color-window-border, var(--border))));
+  border-top: var(--dd-edge-divider, var(--dd-edge, var(--dd-border, var(--color-window-border, var(--border)))));
 }
 
 } /* @layer dreamdesk */

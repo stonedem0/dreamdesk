@@ -41,7 +41,7 @@ add width, and they never replace a line from rules 1 or 2.
 
 | Token | Meaning | Default |
 |---|---|---|
-| `--dd-edge` | the line a container draws round itself | `--color-window-border`, then `--border` |
+| `--dd-edge` | the line a container draws round itself | `--dd-border`, then `--color-window-border`, then `--border` |
 | `--dd-edge-divider` | the line between siblings | `--dd-edge` |
 
 A dark surface can set a lighter divider so lines show against it. The Terminal
@@ -51,11 +51,14 @@ mid grey (`--color-terminal-edge`).
 ## Where it applies today
 
 `.dd-scrollable`, the window scrollbars (`.dd-win-body`, `.terminal-win-body`,
-`.dd-win-scroll-content`), the Pastelcore and base scrollbar rules, and the
-Terminal screen.
+`.dd-win-scroll-content`), the Pastelcore and base scrollbar rules, the Terminal
+screen, the Explorer's pane divider (drawn by the list pane, the later sibling),
+the status bar's section dividers, and the Browser's address box and its
+dropdown divider.
 
 Not migrated yet (they still hand-remove touching edges with `border-right: none`
-and similar): the Explorer panes, lists, the tab strip and the toolbar.
+and similar): the list view's header gridlines, the tab strip, the toolbar,
+dialogs and the Start menu. The tree's dotted guide lines are not edges and stay.
 
 ## Adding a new window
 
