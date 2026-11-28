@@ -213,6 +213,10 @@
 }
 
 .terminal-win-body {
+  /* The scrollbar borders are black, which vanish against the dark terminal:
+     inside it they use a mid grey that shows on both the black text area and the light buttons. */
+  --border: 0.09rem solid var(--color-terminal-edge, #8f858b);
+  --color-window-border: var(--border);
   flex: 1;
   background-color: var(--color-terminal-bg, #000);
   color: var(--color-terminal-fg, #fafafa);
@@ -321,6 +325,14 @@
   box-shadow: var(--scroll-thumb-box-shadow,
     inset -2px 2px 1px var(--scroll-thumb-shadow-light, #fff),
     inset 2px -2px 1px var(--scroll-thumb-shadow-dark, #aaa));
+}
+
+/* ...and its thumb closes on the right, so the end of the thumb has a line */
+.dd-win-body::-webkit-scrollbar-thumb:horizontal,
+.terminal-win-body::-webkit-scrollbar-thumb:horizontal,
+.dd-win-scroll-content::-webkit-scrollbar-thumb:horizontal,
+.dd-scrollable::-webkit-scrollbar-thumb:horizontal {
+  border-right: var(--color-window-border, var(--border));
 }
 
 .dd-win-body::-webkit-scrollbar-thumb:hover,
